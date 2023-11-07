@@ -56,8 +56,9 @@ public class DefaultSuiteTest {
     //driver.findElement(By.cssSelector(".container-fluid:nth-child(2)")).click();
 
     //Validate forename
-    driver.findElement(By.id("forename-err")).click();
+    
     wait.until(ExpectedConditions.presenceOfElementLocated(By.id("forename-err")));
+    driver.findElement(By.id("forename-err")).click();
     assertThat(driver.findElement(By.id("forename-err")).getText(), is("Forename is required"));
 
     //Validate email
